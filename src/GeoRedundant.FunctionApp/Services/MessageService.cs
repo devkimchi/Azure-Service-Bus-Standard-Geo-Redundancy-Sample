@@ -104,13 +104,13 @@ namespace GeoRedundant.FunctionApp.Services
         }
 
         /// <inheritdoc />
-        public async Task ReceiveAsync(Func<Message, Task> callbackToProcess)
+        public async Task ReceiveAsync(Func<ISubscriptionClient, Message, Task> callbackToProcess)
         {
             var messageIds = new List<string>();
             var msglock = new object();
 
             // Handles messages.
-            async Task onMessageReceived(ISubscriptionClient client, int maxCount, Message message)
+            async Task onMessageReceived(ISubscriptionClient client, Message message, int maxMessageDeduplicationCount = 20)
             {
                 var duplicated = false;
                 lock (msglock)
@@ -119,7 +119,7 @@ namespace GeoRedundant.FunctionApp.Services
                     if (!duplicated)
                     {
                         messageIds.Add(message.MessageId);
-                        if (messageIds.Count > maxCount)
+                        if (messageIds.Count > maxMessageDeduplicationCount)
                         {
                             messageIds.RemoveAt(0);
                         }
@@ -128,7 +128,7 @@ namespace GeoRedundant.FunctionApp.Services
 
                 if (!duplicated)
                 {
-                    await callbackToProcess(message).ConfigureAwait(false);
+                    await callbackToProcess(client, message).ConfigureAwait(false);
                 }
             }
 
@@ -150,7 +150,7 @@ namespace GeoRedundant.FunctionApp.Services
             foreach (var client in this._subscriptionClients)
             {
                 client.RegisterMessageHandler(
-                    (msg, token) => onMessageReceived(client, 1, msg),
+                    (msg, token) => onMessageReceived(client, msg),
                     new MessageHandlerOptions(onExceptionReceived) { AutoComplete = true, MaxConcurrentCalls = 1 });
             }
 

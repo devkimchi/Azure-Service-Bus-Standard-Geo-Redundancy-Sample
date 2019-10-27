@@ -44,6 +44,6 @@ namespace GeoRedundant.FunctionApp.Services
         /// </summary>
         /// <param name="callbackToProcess"><see cref="Func{Message, Task}"/> expression.</param>
         /// <returns>Returns the <see cref="Task"/>.</returns>
-        Task ReceiveAsync(Func<Message, Task> callbackToProcess);
+        Task ReceiveAsync(Func<ISubscriptionClient, Message, Task> callbackToProcess);
     }
 }

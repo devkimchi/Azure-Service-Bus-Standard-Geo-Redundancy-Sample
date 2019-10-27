@@ -42,9 +42,9 @@ namespace GeoRedundant.FunctionApp
 
             await this._service
                       .WithSubscriptionClients()
-                      .ReceiveAsync(async p =>
+                      .ReceiveAsync(async (client, message) =>
                       {
-                          log.LogInformation($"Processed: {p.MessageId}");
+                          log.LogInformation($"Processed: {message.MessageId} at {client.ServiceBusConnection.Endpoint}");
 
                           await Task.CompletedTask.ConfigureAwait(false);
                       })
