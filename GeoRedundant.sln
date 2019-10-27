@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E0AD6D6F-8BB2-4E2E-826C-AB79681CD878}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoRedundant.FunctionApp", "src\GeoRedundant.FunctionApp\GeoRedundant.FunctionApp.csproj", "{BE19DD00-1D2E-4FDA-9782-2DA2B42BA5E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE19DD00-1D2E-4FDA-9782-2DA2B42BA5E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE19DD00-1D2E-4FDA-9782-2DA2B42BA5E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE19DD00-1D2E-4FDA-9782-2DA2B42BA5E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE19DD00-1D2E-4FDA-9782-2DA2B42BA5E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE19DD00-1D2E-4FDA-9782-2DA2B42BA5E2} = {E0AD6D6F-8BB2-4E2E-826C-AB79681CD878}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38681D1A-A6A7-4F62-90B8-D92AA910BCED}
+	EndGlobalSection
+EndGlobal
