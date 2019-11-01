@@ -6,9 +6,9 @@ This provides a sample Azure Functions app to send messages to geo-redundant Azu
 ## More Readings ##
 
 * Blogs:
-  * 한국어: TBC
-  * English: TBC
-* [Protecting Against Outages and Disasters &ndash; Service Bus Standard](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-outages-disasters?WT.mc_id=servicebusgeoredundancy-blog-juyoo#active-replication)
+  * 한국어: [지역 이중화로 구성된 애저 서비스 버스에 애저 펑션을 이용해서 메시지 주고 받기](https://blog.aliencube.org/ko/2019/10/30/handling-messages-with-geo-redundant-azure-service-bus-via-azure-functions/)
+  * English: [Handling Messages with Geo-Redundant Azure Service Bus via Azure Functions](https://devkimchi.com/2019/10/30/handling-messages-with-geo-redundant-azure-service-bus-via-azure-functions/)
+* [Protecting Against Outages and Disasters &ndash; Service Bus Standard](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-outages-disasters?WT.mc_id=devkimchicom-github-juyoo#active-replication)
 * [Sample Console App &ndash; Azure Service Bus Geo-Replication](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/GeoReplication)
 
 
